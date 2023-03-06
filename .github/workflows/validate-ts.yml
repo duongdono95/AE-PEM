@@ -1,0 +1,31 @@
+# Aotearoa Energy workflow
+
+name: Validate branch (Lint & Build)
+
+on:
+  push:
+    branches: !master
+
+env:
+  ci: false
+
+jobs:
+  publish:
+    name: Validate commit/pull
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Install Node.JS
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+      - name: Create .npmrc file
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+      - name: Install packages
+        run: npm ci
+      - name: Run ESLint
+        uses: icrawl/action-eslint@v1
+      - name: Typescript build
+        uses: icrawl/action-tsc@v1
+        with:
+          build: ./

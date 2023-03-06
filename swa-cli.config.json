@@ -9,7 +9,6 @@
       "appDevserverUrl": "http://localhost:4090",
       "appName": "ae-pem",
       "resourceGroup": "matching-services",
-      "deploymentToken": "7f05b2db68205a2635ec2dc0ad19457064a4e123a66467011a5fa0d60c7f23712-be51f12e-9a13-4d20-8df9-21fa0e8b33ee00053150",
       "yes": true
     }
   }
