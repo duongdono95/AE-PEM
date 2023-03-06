@@ -1,9 +1,10 @@
 export const connect = async () => {
-  const res = await fetch('https://dev.pem.electricity.cfd/negotiate');
+  const res = await fetch('/negotiate');
   const data = await res.json();
   const ws = new WebSocket(data.url, 'json.webpubsub.azure.v1');
   const ackId = 0;
   ws.onopen = () => {
+    console.log(ws);
     console.log('connected');
   };
   ws.onerror = evt => {

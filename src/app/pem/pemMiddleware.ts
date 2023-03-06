@@ -22,9 +22,7 @@ export const pemMiddleware = (): ThunkMiddleware => {
           break;
         default:
           if (process.env.NODE_ENV === 'development') {
-            const newEvent = new Date().getTime();
-
-            console.log(newEvent, action);
+            console.log(action);
           }
           return next(action);
       }
