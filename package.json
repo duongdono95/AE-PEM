@@ -2,6 +2,10 @@
   "name": "ae-pem",
   "version": "0.1.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Aotearoa-Energy/ae-pem.git"
+  },
   "dependencies": {
     "@material-ui/core": "^4.12.4",
     "@reduxjs/toolkit": "^1.9.3",
